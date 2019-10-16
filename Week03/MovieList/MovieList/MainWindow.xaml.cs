@@ -24,5 +24,35 @@ namespace MovieList
         {
             InitializeComponent();
         }
+
+ 
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            string title = titleInput.Text;
+            int releaseYear = Convert.ToInt32(releaseYearInput.Text);
+            string director = directorInput.Text;
+            string genre = genreInput.Text;
+            int time = Convert.ToInt32(timeInput.Text);
+
+            Movie movie = new Movie(title, releaseYear, director, genre, time);
+            MessageBox.Show("Movie was added");
+
+        
+        }
+
+        private void ShowButton_Click(object sender, RoutedEventArgs e)
+        {
+            IEnumerable<Movie> Movies = null;
+            foreach (Movie movie in Movies)
+            {
+                MessageBox.Show("The movie is " + movie.Title + "\r\n" + "The movie was released in" + movie.ReleaseYear 
+                                 + "\r\n" + "The director was " +
+
+                                );
+                movie.ShowDetails();
+            }
+        }
     }
+    
 }
